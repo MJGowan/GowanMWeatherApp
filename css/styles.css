@@ -16,5 +16,10 @@ body{
     background: url("../assets/pexels-siglinde-luise-13176978.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    
+    font-family:Kasei-Regular;
+}
+
+.currentLocation{
+    background-color:rgba(31, 31, 31, 0.607);
+    border-radius:15px;
 }
