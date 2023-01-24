@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Kasei-Regular;
+    src: url("../assets/KaiseiDecol-Regular.ttf");
+}
+@font-face {
+    font-family: Kasei-Medium;
+    src: url("../assets/KaiseiDecol-Medium.ttf");
+}
+@font-face {
+    font-family: Kasei-Bold;
+    src: url("../assets/KaiseiDecol-Bold.ttf");
+}
+
+
+body{
+    background: url("../assets/pexels-siglinde-luise-13176978.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
