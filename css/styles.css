@@ -11,15 +11,36 @@
     src: url("../assets/KaiseiDecol-Bold.ttf");
 }
 
-
 body{
     background: url("../assets/pexels-siglinde-luise-13176978.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     font-family:Kasei-Regular;
+    color:white;
+}
+
+.card{
+    border-color:rgb(12, 167, 146);
+    border-width: 4px;
+    background-color:rgba(227, 227, 227, 0.715);
+    color:black;
+}
+
+.bold{
+    font-family: Kasei-Bold;
+    font-size: x-large;
 }
 
 .currentLocation{
     background-color:rgba(31, 31, 31, 0.607);
+    border-color:pink;
+    border-width:4px;
     border-radius:15px;
+}
+
+.fiveDays{
+    background-color:rgb(12, 167, 146);
+    border-radius:6px;
+    height:50px;
+   
 }
