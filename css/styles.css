@@ -50,22 +50,16 @@ body{
     
 }
 
-.testing{
-    background-image: url("../assets/Cloud.png");
+/* .testing{
     background-image: url("../assets/Cloud\ \(1\).png");
-
-    background-image: url("../assets/CloudFog.png");
     background-image: url("../assets/CloudFog\ \(1\).png");
-
-    background-image: url("../assets/CloudLightning.png");
     background-image: url("../assets/CloudLightning\ \(1\).png");
-
-    background-image: url("../assets/CloudRain.png");
     background-image: url("../assets/CloudRain\ \(1\).png");
-
-    background-image: url("../assets/CloudSnow.png");
     background-image: url("../assets/CloudSnow\ \(1\).png");
-    
-    background-image: url("../assets/CloudSun.png");
     background-image: url("../assets/CloudSun\ \(1\).png");
+} */
+
+.heartBtn{
+    background-color: transparent;
+    border-color: transparent;
 }
