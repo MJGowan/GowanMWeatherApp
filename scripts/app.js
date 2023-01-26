@@ -30,7 +30,7 @@ let fiveDayApi = "";
 let latitude = 0;
 let longitude = 0;
 
-
+let insertIconOne = document.getElementById("insertIconOne");
 
 submitBtn.addEventListener("click", function (e) {
     e.preventDefault();
@@ -70,28 +70,51 @@ async function GetFiveDayWeather() {
     const data = await promise.json();
     fiveDayApi = data;
 
-    dayOneTemp.innerHTML = fiveDayApi.list[5].main.temp + " °F";
-    dayTwoTemp.innerHTML = fiveDayApi.list[13].main.temp + " °F";
-    dayThreeTemp.innerHTML = fiveDayApi.list[21].main.temp + " °F";
-    dayFourTemp.innerHTML = fiveDayApi.list[29].main.temp + " °F";
-    dayFiveTemp.innerHTML = fiveDayApi.list[37].main.temp + " °F";
+    dayOneTemp.innerHTML = fiveDayApi.list[4].main.temp + " °F";
+    dayTwoTemp.innerHTML = fiveDayApi.list[12].main.temp + " °F";
+    dayThreeTemp.innerHTML = fiveDayApi.list[20].main.temp + " °F";
+    dayFourTemp.innerHTML = fiveDayApi.list[28].main.temp + " °F";
+    dayFiveTemp.innerHTML = fiveDayApi.list[36].main.temp + " °F";
 
-    dayOneWeather.innerHTML = fiveDayApi.list[5].weather[0].main;
-    dayTwoWeather.innerHTML = fiveDayApi.list[13].weather[0].main;
-    dayThreeWeather.innerHTML = fiveDayApi.list[21].weather[0].main;
-    dayFourWeather.innerHTML = fiveDayApi.list[29].weather[0].main;
-    dayFiveWeather.innerHTML = fiveDayApi.list[37].weather[0].main;
+    dayOneWeather.innerHTML = fiveDayApi.list[4].weather[0].main;
+    dayTwoWeather.innerHTML = fiveDayApi.list[12].weather[0].main;
+    dayThreeWeather.innerHTML = fiveDayApi.list[20].weather[0].main;
+    dayFourWeather.innerHTML = fiveDayApi.list[28].weather[0].main;
+    dayFiveWeather.innerHTML = fiveDayApi.list[36].weather[0].main;
 
-    dayOneDate.innerHTML = fiveDayApi.list[5].dt_txt;
-    dayTwoDate.innerHTML = fiveDayApi.list[13].dt_txt;
-    dayThreeDate.innerHTML = fiveDayApi.list[21].dt_txt;
-    dayFourDate.innerHTML = fiveDayApi.list[29].dt_txt;
-    dayFiveDate.innerHTML = fiveDayApi.list[27].dt_txt;
+    dayOneDate.innerHTML = fiveDayApi.list[4].dt_txt;
+    dayTwoDate.innerHTML = fiveDayApi.list[12].dt_txt;
+    dayThreeDate.innerHTML = fiveDayApi.list[20].dt_txt;
+    dayFourDate.innerHTML = fiveDayApi.list[28].dt_txt;
+    dayFiveDate.innerHTML = fiveDayApi.list[36].dt_txt;
 
     console.log("Tomorrow: " + dayOneTemp.innerHTML + ", " + dayOneWeather.innerHTML);
     console.log("Day Two: " + dayTwoTemp.innerHTML + ", " + dayTwoWeather.innerHTML);
     console.log("Day Three: " + dayThreeTemp.innerHTML + ", " + dayThreeWeather.innerHTML);
     console.log("Day Four: " + dayFourTemp.innerHTML + ", " + dayFourWeather.innerHTML);
     console.log("Day Five: " + dayFiveTemp.innerHTML + ", " + dayFiveWeather.innerHTML);
+
+
+    let imgOne = document.createElement("img");
+    if(dayOneWeather.innerHTML == "Clear"){
+        imgOne.src = "../assets/Sun\ \(1\).png";
+        insertIconOne.appendChild(imgOne);
+    }else if(dayOneWeather.innerHTML == "Clouds"){
+        imgOne.src = "../assets/Cloud\ \(1\).png";
+        insertIconOne.appendChild(imgOne);
+    }else if(dayOneWeather.innerHTML == "Mist" || dayOneWeather.innerHTML == "Smoke" || dayOneWeather.innerHTML == "Haze" || dayOneWeather.innerHTML == "Dust" || dayOneWeather.innerHTML == "Fog" || dayOneWeather.innerHTML == "Sand" || dayOneWeather.innerHTML == "Dust" || dayOneWeather.innerHTML == "Ash" || dayOneWeather.innerHTML == "Squall" || dayOneWeather.innerHTML == "Tornado"){
+        imgOne.src = "../assets/CloudFog\ \(1\).png";
+        insertIconOne.appendChild(imgOne);
+    }else if(dayOneWeather.innerHTML == "Snow"){
+        imgOne.src = "../assets/CloudSnow\ \(1\).png";
+        insertIconOne.appendChild(imgOne);
+    }else if(dayOneWeather.innerHTML == "Rain" || dayOneWeather.innerHTML == "Drizzle"){
+        imgOne.src = "../assets/CloudRain\ \(1\).png";
+        insertIconOne.appendChild(imgOne);
+    }else if(dayOneWeather.innerHTML == "Thunderstorm"){
+        imgOne.src = "../assets/CloudLightning\ \(1\).png";
+        insertIconOne.appendChild(imgOne);
+    }
+
 
 }
