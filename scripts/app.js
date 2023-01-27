@@ -229,18 +229,19 @@ async function GetFiveDayWeather() {
 }
 
 let favBtn = document.getElementById("favBtn");
-//let favOne = document.getElementById("favOne");
-// let favTwo = document.getElementById("favTwo");
-// let favThree = document.getElementById("favThree");
-// let favFour = document.getElementById("favFour");
-// let favFive = document.getElementById("favFive");
+
+let favOne = document.getElementById("favOne");
+let favTwo = document.getElementById("favTwo");
+let favThree = document.getElementById("favThree");
+let favFour = document.getElementById("favFour");
+let favFive = document.getElementById("favFive");
 
 
 
 favBtn.addEventListener("click", function(e){
     e.preventDefault();
     addAndRemove(cityState.textContent);
-    //console.log(cityState.textContent);
+    console.log(favorites);
 })
 
 function addAndRemove(addFav){
@@ -252,4 +253,11 @@ function addAndRemove(addFav){
     }else{
         saveToLocalStorage(addFav);
     }
+    favOne.innerHTML = favorites[0];
+    favTwo.innerText = favorites[1];
+    favThree.innerHTML = favorites[2];
+    favFour.innerText = favorites[3];
+    favFive.innerHTML = favorites[4];
 }
+
+
