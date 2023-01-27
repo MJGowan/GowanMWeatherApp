@@ -18,6 +18,11 @@ body{
     font-family:Kasei-Regular;
     color:white;
 }
+.myBtn{
+    color:rgb(12, 159, 167) !important;
+    border-color:rgb(12, 159, 167) !important;
+    background-color: transparent !important;
+}
 .whiteText{
     color:white;
 }
@@ -43,21 +48,13 @@ body{
     background-color:rgb(12, 159, 167);
     border-radius:6px;
     height:50px;
+    padding-top:10px;
    
 }
 .largerText{
-    font-size:x-large;
+    font-size:large;
     
 }
-
-/* .testing{
-    background-image: url("../assets/Cloud\ \(1\).png");
-    background-image: url("../assets/CloudFog\ \(1\).png");
-    background-image: url("../assets/CloudLightning\ \(1\).png");
-    background-image: url("../assets/CloudRain\ \(1\).png");
-    background-image: url("../assets/CloudSnow\ \(1\).png");
-    background-image: url("../assets/CloudSun\ \(1\).png");
-} */
 
 .heartBtn{
     background-color: transparent;

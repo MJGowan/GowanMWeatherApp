@@ -1,7 +1,7 @@
-import { saveToLocalStorage, getLocalStorage, removeFromLocalStorage } from "./localStorage.js";
+import { saveToLocalStorage, getLocalStorage, removeFromLocalStorage, favorites } from "./localStorage.js";
 
 let search = document.getElementById("search");
-// let submitBtn = document.getElementById("submitBtn");
+let submitBtn = document.getElementById("submitBtn");
 let cityState = document.getElementById("cityState");
 // let state = document.getElementById("state");
 let currentTemp = document.getElementById("currentTemp");
@@ -33,35 +33,29 @@ let fiveDayApi = "";
 let latitude = 0;
 let longitude = 0;
 
-let favBtn = document.getElementById("favBtn");
-
-let favOne = document.getElementById("favOne");
-// let favTwo = document.getElementById("favTwo");
-// let favThree = document.getElementById("favThree");
-// let favFour = document.getElementById("favFour");
-// let favFive = document.getElementById("favFive");
-
-//let favorites = [];
-
-// submitBtn.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     GetCurrentWeather();
-// })
 
 
-search.addEventListener("keypress", function(e){
-    if (e.key == "Enter"){
-        cityState.innerHTML = search.value;
-        GetCurrentWeather();  
-    }
+submitBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    GetCurrentWeather();
 })
 
 
-async function GetCurrentWeather() {
-    const promise = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + search.value + "&appid=3e03548e4b5b893a8d7107d354c21c94&units=imperial");
-    const data = await promise.json();
+// search.addEventListener("keypress", function(e, event){
+//     if (e.key == "Enter"){
+    //         cityState.innerHTML = search.value;
+    //         GetCurrentWeather();  
+    //     }
+    // })
+
+    
+    async function GetCurrentWeather() {
+        const promise = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + search.value + "&appid=3e03548e4b5b893a8d7107d354c21c94&units=imperial");
+        const data = await promise.json();
     griffinsApi = data;
     
+    let cityStuff = griffinsApi.name;
+
     console.log(data);
     
     latitude = griffinsApi.coord.lat;
@@ -113,8 +107,8 @@ async function GetFiveDayWeather() {
     console.log("Day Four: " + dayFourTemp.innerHTML + ", " + dayFourWeather.innerHTML);
     console.log("Day Five: " + dayFiveTemp.innerHTML + ", " + dayFiveWeather.innerHTML);
     
-
-
+    
+    
     let insertIconOne = document.getElementById("insertIconOne");
     let insertIconTwo = document.getElementById("insertIconTwo");
     let insertIconThree = document.getElementById("insertIconThree");
@@ -166,7 +160,7 @@ async function GetFiveDayWeather() {
         imgTwo.src = "../assets/CloudLightning\ \(1\).png";
         insertIconTwo.appendChild(imgTwo);
     }
-
+    
     if(dayThreeWeather.innerHTML == "Clear"){
         imgThree.src = "../assets/Sun\ \(1\).png";
         insertIconThree.appendChild(imgThree);
@@ -186,7 +180,7 @@ async function GetFiveDayWeather() {
         imgThree.src = "../assets/CloudLightning\ \(1\).png";
         insertIconThree.appendChild(imgThree);
     }
-
+    
     if(dayFourWeather.innerHTML == "Clear"){
         imgFour.src = "../assets/Sun\ \(1\).png";
         insertIconFour.appendChild(imgFour);
@@ -206,7 +200,7 @@ async function GetFiveDayWeather() {
         imgFour.src = "../assets/CloudLightning\ \(1\).png";
         insertIconFour.appendChild(imgFour);
     }
-
+    
     if(dayFiveWeather.innerHTML == "Clear"){
         imgFive.src = "../assets/Sun\ \(1\).png";
         insertIconFive.appendChild(imgFive);
@@ -226,30 +220,36 @@ async function GetFiveDayWeather() {
         imgFive.src = "../assets/CloudLightning\ \(1\).png";
         insertIconFive.appendChild(imgFive);
     }
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
 }
 
-let f = cityState.innerHTML;
+let favBtn = document.getElementById("favBtn");
+//let favOne = document.getElementById("favOne");
+// let favTwo = document.getElementById("favTwo");
+// let favThree = document.getElementById("favThree");
+// let favFour = document.getElementById("favFour");
+// let favFive = document.getElementById("favFive");
 
-let favorites = getLocalStorage();
 
-favBtn.addEventListener("click", function(){
-    if(favorites.includes(f)){
-        console.log("Removing " + f + " from your list of favorite cities");
-        removeFromLocalStorage(f);
-    }else{
-        console.log("Adding " + f + " to your list of favorite cities");
-        saveToLocalStorage(f);
 
-        favorites.map( favoriteCity => {
-            let p = document.createElement('p');
-            p.textContent = favoriteCity;
-            favOne.appendChild(p);
-        })
-    }
+favBtn.addEventListener("click", function(e){
+    e.preventDefault();
+    addAndRemove(cityState.textContent);
+    //console.log(cityState.textContent);
 })
+
+function addAndRemove(addFav){
+    getLocalStorage();
+    console.log(addFav);
+
+    if (favorites.includes(addFav)){
+        removeFromLocalStorage(addFav);
+    }else{
+        saveToLocalStorage(addFav);
+    }
+}
