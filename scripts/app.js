@@ -253,11 +253,23 @@ function addAndRemove(addFav){
     }else{
         saveToLocalStorage(addFav);
     }
-    favOne.innerHTML = favorites[0];
-    favTwo.innerText = favorites[1];
-    favThree.innerHTML = favorites[2];
-    favFour.innerText = favorites[3];
-    favFive.innerHTML = favorites[4];
+
+
+    if(favorites[0] != undefined){
+        favOne.innerHTML = favorites[0];
+    }
+    if(favorites[1] != undefined){
+        favTwo.innerHTML = favorites[1];
+    }
+    if(favorites[2] != undefined){
+        favThree.innerHTML = favorites[2];
+    }
+    if(favorites[3] != undefined){
+        favFour.innerHTML = favorites[3];
+    }
+    if(favorites[4] != undefined){
+        favFive.innerHTML = favorites[4];
+    }
 }
 
 
