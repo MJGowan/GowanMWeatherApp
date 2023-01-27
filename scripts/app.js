@@ -53,8 +53,6 @@ submitBtn.addEventListener("click", function (e) {
         const promise = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + search.value + "&appid=3e03548e4b5b893a8d7107d354c21c94&units=imperial");
         const data = await promise.json();
     griffinsApi = data;
-    
-    let cityStuff = griffinsApi.name;
 
     console.log(data);
     
