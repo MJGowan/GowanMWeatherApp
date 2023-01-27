@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/ffaa5111-6998-4ac0-b6b0-1fcd5ad15c9e/AppServices/subscriptions/ffaa5111-6998-4ac0-b6b0-1fcd5ad15c9e/resourceGroups/GowanMWeatherApp_group/providers/Microsoft.Web/sites/GowanMWeatherApp",
+    "appService.deploySubpath": "."
+}
