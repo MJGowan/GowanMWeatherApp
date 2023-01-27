@@ -257,18 +257,32 @@ function addAndRemove(addFav){
 
     if(favorites[0] != undefined){
         favOne.innerHTML = favorites[0];
+    }else{
+        favOne.innerHTML = "";
     }
+
     if(favorites[1] != undefined){
         favTwo.innerHTML = favorites[1];
+    }else{
+        favTwo.innerHTML = "";
     }
+
     if(favorites[2] != undefined){
         favThree.innerHTML = favorites[2];
+    }else{
+        favThree.innerHTML = "";
     }
+
     if(favorites[3] != undefined){
         favFour.innerHTML = favorites[3];
+    }else{
+        favFour.innerHTML = "";
     }
+
     if(favorites[4] != undefined){
         favFive.innerHTML = favorites[4];
+    }else{
+        favFive.innerHTML = "";
     }
 }
 
